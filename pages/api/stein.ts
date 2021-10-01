@@ -9,6 +9,7 @@ const store = new SteinStore(process.env.API_URL)
 
 const api = async (req: NextApiRequest, res: NextApiResponse) => {
   const response = await store.append('exchanges', [req.body])
+  console.log(response)
   res.status(200).json({ data: response })
 }
 
